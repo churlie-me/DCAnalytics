@@ -1,0 +1,239 @@
+<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netstandard2.0</TargetFramework>
+  </PropertyGroup>
+
+  <PropertyGroup Condition="'$(Configuration)|$(Platform)'=='Debug|AnyCPU'">
+    <DebugType>pdbonly</DebugType>
+    <DebugSymbols>true</DebugSymbols>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <Compile Remove="DataModel\**" />
+    <EmbeddedResource Remove="DataModel\**" />
+    <None Remove="DataModel\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Naxam.Mapbox.Forms" Version="1.0.8.3" />
+    <PackageReference Include="Newtonsoft.Json" Version="12.0.3" />
+    <PackageReference Include="Plugin.Fingerprint" Version="1.4.9" />
+    <PackageReference Include="Plugin.Permissions" Version="3.0.0.12" />
+    <PackageReference Include="Refractored.MvvmHelpers" Version="1.6.2" />
+    <PackageReference Include="Rg.Plugins.Popup" Version="2.0.0.10" />
+    <PackageReference Include="sqlite-net-pcl" Version="1.6.292" />
+    <PackageReference Include="Xam.Plugin.Geolocator" Version="4.5.0.6" />
+    <PackageReference Include="Xam.Plugin.Media" Version="4.0.1.5" />
+    <PackageReference Include="Xamarin.Essentials" Version="1.2.0" />
+    <PackageReference Include="Xamarin.Forms" Version="4.8.0.1269" />
+    <PackageReference Include="Xamarin.Forms.InputKit" Version="3.1.0" />
+    <PackageReference Include="Xamarin.Plugin.FilePicker" Version="2.1.34" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\..\DCAnalyticsOM\DCAnalytics.csproj" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Compile Update="Views\Popups\AddLocation.xaml.cs">
+      <DependentUpon>AddLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\AddTrainingLocation.xaml.cs">
+      <DependentUpon>AddTrainingLocation.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ChangeEmailAddress.xaml.cs">
+      <DependentUpon>ChangeEmailAddress.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\SelectCategory.xaml.cs">
+      <DependentUpon>SelectCategory.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ProgressDialog.xaml.cs">
+      <DependentUpon>ProgressDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\LocationDialog.xaml.cs">
+      <DependentUpon>LocationDialog.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\HelpCenter.xaml.cs">
+      <DependentUpon>HelpCenter.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ChangeUsername.xaml.cs">
+      <DependentUpon>ChangeUsername.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ConfigurationUrl.xaml.cs">
+      <DependentUpon>ConfigurationUrl.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\AddTrainer.xaml.cs">
+      <DependentUpon>AddTrainer.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\FingerPrintScanner.xaml.cs">
+      <DependentUpon>FingerPrintScanner.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\QuestionaireBrief.xaml.cs">
+      <DependentUpon>QuestionaireBrief.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\Certificates.xaml.cs">
+      <DependentUpon>Certificates.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\SpecifyRole.xaml.cs">
+      <DependentUpon>SpecifyRole.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\SelectQuestionaire.xaml.cs">
+      <DependentUpon>SelectQuestionaire.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\MessageBox.xaml.cs">
+      <DependentUpon>MessageBox.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\LandMapping.xaml.cs">
+      <DependentUpon>LandMapping.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\PhotoUploadOptions.xaml.cs">
+      <DependentUpon>PhotoUploadOptions.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Popups\ChangePassword.xaml.cs">
+      <DependentUpon>ChangePassword.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\Profile.xaml.cs">
+      <DependentUpon>Profile.xaml</DependentUpon>
+    </Compile>
+    <Compile Update="Views\SaveQuestionaire.xaml.cs">
+      <DependentUpon>SaveQuestionaire.xaml</DependentUpon>
+    </Compile>
+  </ItemGroup>
+
+  <ItemGroup>
+    <EmbeddedResource Update="Views\ConfigDashboard.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Configurations.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Dashboard.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Demo.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Fields.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ForgotPassword.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Init.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\MainPage.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Mapping.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\NavigationDrawer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AddLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AddTrainingLocation.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\ConfigurationUrl.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AddTrainer.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\FingerPrintScanner.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Otp.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\ResetPassword.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SelectCategory.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\QuestionaireBrief.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\Certificates.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SpecifyRole.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SelectQuestionaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\AIDropdown.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\MessageBox.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\LandMapping.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\SelectConfiguration.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\PhotoUploadOptions.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Popups\Synchronize.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Preview.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Profile.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Purchase.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Purchases.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\QSections.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Questionaires.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Settings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SignIn.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SplashScreen.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\SaveQuestionaire.xaml">
+      <Generator>MSBuild:Compile</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Starter.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Trainees.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Training.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+    <EmbeddedResource Update="Views\Trainings.xaml">
+      <Generator>MSBuild:UpdateDesignTimeXaml</Generator>
+    </EmbeddedResource>
+  </ItemGroup>
+</Project>

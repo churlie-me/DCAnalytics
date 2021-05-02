@@ -1,0 +1,47 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DCAnalyticsMobile.Controls"
+             Title="Select Configuration"
+             x:Class="DCAnalyticsMobile.Views.Configurations">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <Frame HasShadow="False" Padding="1" CornerRadius="4" BorderColor="LightSlateGray" 
+                   x:Name="search" HorizontalOptions="FillAndExpand"
+                   Margin="0,10,0,20">
+                <local:AISearchBar 
+                        BackgroundColor="White" HorizontalOptions="Fill" 
+                        HeightRequest="40" FontSize="14"
+                        Placeholder="Search Configuration" TextChanged="SearchConfiguration" Margin="2,0,2,0" />
+            </Frame>
+            <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="progressIndicator">
+                <ActivityIndicator IsRunning="True" IsVisible="True"/>
+                <Label HorizontalOptions="Center" Text="Please wait..." />
+            </StackLayout>
+            <StackLayout x:Name="noconfigurations" Orientation="Vertical" IsVisible="False" Margin="20,0,20,0"
+                                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <Label HorizontalOptions="Center" VerticalOptions="Center" Text="You have no configurations filled out yet" FontSize="15" />
+            </StackLayout>
+            <ListView ItemTapped="OnConfigurationTapped" IsVisible="False" x:Name="_configurations" SelectionMode="None" HasUnevenRows="True" SeparatorVisibility="None">
+                <ListView.ItemTemplate>
+                    <DataTemplate>
+                        <ViewCell>
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="7,10,7,10" Margin="0,0,0,3"
+                                         BackgroundColor = "{Binding Sequence,Converter={StaticResource SequenceBackgroundColourConverter}}">
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="Fill" Padding="6,0,6,0">
+                                    <StackLayout Orientation="Horizontal" HorizontalOptions="StartAndExpand" Padding="0,1,0,4">
+                                        <Label Text="{Binding Name}"  FontSize="15" TextColor="{Binding Sequence,Converter={StaticResource SequenceColourConverter}}"/>
+                                    </StackLayout>
+                                </StackLayout>
+                                <StackLayout Orientation="Horizontal" HorizontalOptions="EndAndExpand" Padding="6,0,6,0">
+                                    <Label Text="ID : " FontSize="15" TextColor="{Binding Sequence,Converter={StaticResource SequenceColourConverter}}" />
+                                    <Label Text="{Binding OID}" FontSize="15" TextColor="{Binding Sequence,Converter={StaticResource SequenceColourConverter}}" />
+                                </StackLayout>
+                            </StackLayout>
+                        </ViewCell>
+                    </DataTemplate>
+                </ListView.ItemTemplate>
+            </ListView>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

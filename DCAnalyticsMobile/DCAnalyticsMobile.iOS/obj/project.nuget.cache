@@ -1,0 +1,55 @@
+{
+  "version": 2,
+  "dgSpecHash": "oLKgviS0bgesPkriXMak3rdFWT+HdU82M24Ljw6MM8F7SjsECMXf4y3uz3Rz0JSllgPPDOqMwZYPng3atzYmmQ==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CJ\\source\\Workspaces\\DCAnalytics\\DCAnalyticsMobile\\DCAnalyticsMobile.iOS\\DCAnalyticsMobile.iOS.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CJ\\.nuget\\packages\\naxam.mapbox.forms\\1.0.8.3\\naxam.mapbox.forms.1.0.8.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\naxam.mapbox.ios\\5.4.0\\naxam.mapbox.ios.5.4.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\plugin.fingerprint\\1.4.9\\plugin.fingerprint.1.4.9.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\rg.plugins.popup\\1.2.0.223\\rg.plugins.popup.1.2.0.223.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlitepclraw.provider.sqlite3.ios_unified\\1.1.13\\sqlitepclraw.provider.sqlite3.ios_unified.1.1.13.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xam.plugin.media\\4.0.1.5\\xam.plugin.media.4.0.1.5.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.essentials\\1.2.0\\xamarin.essentials.1.2.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.forms\\4.1.0.778454\\xamarin.forms.4.1.0.778454.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.forms.inputkit\\3.1.0\\xamarin.forms.inputkit.3.1.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.plugin.filepicker\\2.1.34\\xamarin.plugin.filepicker.2.1.34.nupkg.sha512"
+  ],
+  "logs": [
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Rg.Plugins.Popup from 2.0.0.10 to 1.2.0.223. Reference the package directly from the project to select a different version. \r\n DCAnalyticsMobile.iOS -> DCAnalyticsMobile -> Rg.Plugins.Popup (>= 2.0.0.10) \r\n DCAnalyticsMobile.iOS -> Rg.Plugins.Popup (>= 1.2.0.223)",
+      "libraryId": "Rg.Plugins.Popup",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    },
+    {
+      "code": "NU1605",
+      "level": "Warning",
+      "warningLevel": 1,
+      "message": "Detected package downgrade: Xamarin.Forms from 4.8.0.1269 to 4.1.0.778454. Reference the package directly from the project to select a different version. \r\n DCAnalyticsMobile.iOS -> DCAnalyticsMobile -> Xamarin.Forms (>= 4.8.0.1269) \r\n DCAnalyticsMobile.iOS -> Xamarin.Forms (>= 4.1.0.778454)",
+      "libraryId": "Xamarin.Forms",
+      "targetGraphs": [
+        "Xamarin.iOS,Version=v1.0",
+        "Xamarin.iOS,Version=v1.0/win",
+        "Xamarin.iOS,Version=v1.0/win-x64",
+        "Xamarin.iOS,Version=v1.0/win-x86"
+      ]
+    }
+  ]
+}

@@ -1,0 +1,81 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.Profile"
+             BackgroundColor="White"
+             Title="Profile">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical">
+            <StackLayout HeightRequest="230" BackgroundColor="#1976d3">
+                <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="10,15,0,0">
+                    <Frame HasShadow="False" Padding="0"  BackgroundColor="#00314A" IsClippedToBounds="True" HorizontalOptions="Center">
+                        <StackLayout HeightRequest="80" WidthRequest="80">
+                            <Image Source="avatar.png" HeightRequest="80" WidthRequest="80" x:Name="avatar" Aspect="Fill"/>
+                        </StackLayout>
+                        <Frame.CornerRadius>
+                            <OnPlatform x:TypeArguments="x:Single" iOS="50" Android="100"/>
+                        </Frame.CornerRadius>
+                    </Frame>
+                    <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                        <Label Text="John Doe" x:Name="names" TextColor="White" FontSize="20" Margin="15,0,0,5" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                        <BoxView Color="#88D5F8" HorizontalOptions="Fill" HeightRequest="1"/>
+                        <Label Text="Admin, Andela (U) LTD" x:Name="role" TextColor="LightBlue" FontSize="17" Margin="15,5,0,15" HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                </StackLayout>
+            </StackLayout>
+            <BoxView Color="#88D5F8" HorizontalOptions="Fill" HeightRequest="4" Margin="0,-7,0,0"/>
+            <StackLayout VerticalOptions="FillAndExpand" Padding="10">
+                <StackLayout Margin="0,0,0,15" BackgroundColor="#ffffff" VerticalOptions="Fill">
+                    <Frame Padding="0" Margin="15,15,15,0" VerticalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                            <StackLayout Padding="10" BackgroundColor="#88D5F8">
+                                <Label Text="Your Details" TextColor="#1976d3"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="15">
+                                <StackLayout Orientation="Horizontal" Margin="0,0,0,10">
+                                    <Label Text="Username : " FontAttributes="Bold"/>
+                                    <Label Text="Waibi" x:Name="username"/>
+                                    <Image Source="ic_edit.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnEditUserName" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                                <BoxView Color="#88D5F8" HorizontalOptions="Fill" HeightRequest="1"/>
+                                <StackLayout Orientation="Horizontal" Margin="0,10,0,0">
+                                    <Label Text="Email Address : " FontAttributes="Bold"/>
+                                    <Label Text="awaib@gmail.com" x:Name="mail"/>
+                                    <Image Source="ic_edit.png" WidthRequest="25" HeightRequest="25" HorizontalOptions="EndAndExpand">
+                                        <Image.GestureRecognizers>
+                                            <TapGestureRecognizer Tapped="OnEditEmailAddress" />
+                                        </Image.GestureRecognizers>
+                                    </Image>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout Margin="0,0,0,15">
+                    <Frame Padding="0" Margin="15,15,15,5">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Padding="10" BackgroundColor="#88D5F8">
+                                <Label Text="Account Settings" TextColor="#1976d3"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="15">
+                                <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
+                                    <Label Text="Change Password" FontAttributes="Bold" />
+                                    <Image Source="ic_forward.png" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Margin="10,0,0,0"/>
+                                    <StackLayout.GestureRecognizers>
+                                        <TapGestureRecognizer Tapped="OnEditPassword" />
+                                    </StackLayout.GestureRecognizers>
+                                </StackLayout>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

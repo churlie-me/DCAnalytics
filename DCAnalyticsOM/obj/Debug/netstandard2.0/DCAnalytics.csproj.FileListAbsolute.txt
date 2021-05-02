@@ -1,0 +1,9 @@
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\bin\Debug\netstandard2.0\DCAnalytics.deps.json
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\bin\Debug\netstandard2.0\DCAnalytics.dll
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\bin\Debug\netstandard2.0\DCAnalytics.pdb
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.AssemblyInfoInputs.cache
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.AssemblyInfo.cs
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.csproj.CoreCompileInputs.cache
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.dll
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.pdb
+C:\Users\CJ\source\Workspaces\DCAnalytics\DCAnalyticsOM\obj\Debug\netstandard2.0\DCAnalytics.csprojAssemblyReference.cache

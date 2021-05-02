@@ -1,0 +1,12 @@
+{
+  "version": 2,
+  "dgSpecHash": "f3jwaXYTtKP7sy4lMMvM1xXLcqVesl3np7TbWYwxR7bJKjzNQVXnPsUSlWYPnmFeCdJ1m1PMUH/McHNSqNSCzg==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CJ\\source\\Workspaces\\DCAnalytics\\DCAnalyticsOM\\DCAnalytics.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CJ\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512"
+  ],
+  "logs": []
+}

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<popup:PopupPage xmlns="http://xamarin.com/schemas/2014/forms"
+                 xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+                 xmlns:popup="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+                 xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+                 xmlns:local="clr-namespace:DCAnalyticsMobile.Controls"
+                 x:Class="DCAnalyticsMobile.Views.Popups.Certificates">
+    <!--  Setting animations  -->
+    <popup:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            DurationIn="400" DurationOut="300"
+            EasingIn="SinOut" EasingOut="SinIn"
+            HasBackgroundAnimation="True" PositionIn="Center"
+            PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8" />
+    </popup:PopupPage.Animation>
+    <Frame CornerRadius="10" Margin="12" Padding="0" BackgroundColor="#CBEAF8"
+           VerticalOptions="CenterAndExpand" HorizontalOptions="FillAndExpand">
+        <StackLayout Padding="24,10,24,10" Orientation="Vertical" HorizontalOptions="CenterAndExpand">
+            <StackLayout.Margin>
+                <OnPlatform x:TypeArguments="Thickness" iOS="0,20,0,15" Android="0,0,0,15"/>
+            </StackLayout.Margin>
+            <!-- Top Content -->
+            <StackLayout Orientation="Horizontal" Margin="5,0,0,5" HorizontalOptions="Fill">
+                <Label Text="Certifications" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center" FontSize="18" Margin="0,0,0,0" x:Name="title"/>
+            </StackLayout>
+
+            <!--Questionaire Details-->
+            <StackLayout Orientation="Vertical">
+                <Frame HasShadow="False" Padding="0"  BackgroundColor="#00314A" IsClippedToBounds="True" HorizontalOptions="Center">
+                    <StackLayout HeightRequest="100" WidthRequest="100">
+                        <Image Source="avatar.png" HeightRequest="100" WidthRequest="100" x:Name="avatar" Aspect="Fill"/>
+                    </StackLayout>
+                    <Frame.CornerRadius>
+                        <OnPlatform x:TypeArguments="x:Single" iOS="50" Android="100"/>
+                    </Frame.CornerRadius>
+                </Frame>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Label Text="John Doe" x:Name="name" TextColor="Black" FontSize="20" Margin="15,0,0,0" HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+
+            <RelativeLayout VerticalOptions="StartAndExpand" HeightRequest="250">
+                <StackLayout Orientation="Vertical"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                    <Frame HasShadow="False" Padding="1" CornerRadius="4" BorderColor="LightSlateGray" x:Name="searchFrame" HorizontalOptions="FillAndExpand">
+                        <local:AISearchBar 
+                        BackgroundColor="White" HorizontalOptions="Fill" 
+                        HeightRequest="40" FontSize="14"
+                        Placeholder="Search Certifications" TextChanged="SearchBar_TextChanged" Margin="2,0,2,0" />
+                    </Frame>
+                    <StackLayout x:Name="nocertifications" Orientation="Vertical" IsVisible="False" Margin="20,0,20,0"
+                                 VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                        <Label HorizontalOptions="Center" VerticalOptions="Center" Text="There aren't any certifications in your configuration" FontSize="17" />
+                    </StackLayout>
+                    <ListView ItemTapped="OnCertificationTapped" x:Name="certifications" SelectionMode="None" HasUnevenRows="True">
+                        <ListView.ItemTemplate>
+                            <DataTemplate>
+                                <ViewCell>
+                                    <Frame HorizontalOptions="Fill" Padding="10,6,10,6" HasShadow="False" CornerRadius="3" Margin="0,0,0,3"
+                                   BorderColor="#0178BC"
+                                   BackgroundColor="{Binding Sequence,Converter={StaticResource SequenceBackgroundColourConverter}}">
+                                        <StackLayout Orientation="Horizontal" HorizontalOptions="FillAndExpand" Padding="0,1,0,1">
+                                            <Label Text="{Binding Name}"  FontSize="17" HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"
+                                           TextColor="{Binding Sequence,Converter={StaticResource SequenceColourConverter}}"/>
+                                        </StackLayout>
+                                    </Frame>
+                                </ViewCell>
+                            </DataTemplate>
+                        </ListView.ItemTemplate>
+                    </ListView>
+                </StackLayout>
+                <Label Text="Cancel" HorizontalTextAlignment="Center" FontAttributes="Bold" FontSize="18"
+                       RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                       RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                       RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ExitCertificates"/> 
+                    </Label.GestureRecognizers>
+                </Label>
+            </RelativeLayout>
+        </StackLayout>
+    </Frame>
+</popup:PopupPage>

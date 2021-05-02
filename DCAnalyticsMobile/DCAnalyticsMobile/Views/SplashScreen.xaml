@@ -1,0 +1,18 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.SplashScreen"
+             BackgroundColor="#1976d3"
+             NavigationPage.HasNavigationBar="False">
+    <ContentPage.Content>
+        <StackLayout Padding="10">
+            <StackLayout x:Name="signStack" Orientation="Vertical" 
+                         VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="Center" Padding="5,0,5,10">
+                    <Image Source="ic_logo.png" WidthRequest="120" HeightRequest="120" 
+                           HorizontalOptions="Center" VerticalOptions="Center" />
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

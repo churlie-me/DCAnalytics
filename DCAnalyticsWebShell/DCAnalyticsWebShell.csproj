@@ -1,0 +1,115 @@
+<Project Sdk="Microsoft.NET.Sdk.Web">
+
+  <PropertyGroup Label="Globals">
+    <SccProjectName>SAK</SccProjectName>
+    <SccProvider>SAK</SccProvider>
+    <SccAuxPath>SAK</SccAuxPath>
+    <SccLocalPath>SAK</SccLocalPath>
+  </PropertyGroup>
+
+  <PropertyGroup>
+    <TargetFramework>netcoreapp2.2</TargetFramework>
+    <TypeScriptCompileBlocked>true</TypeScriptCompileBlocked>
+    <TypeScriptToolsVersion>Latest</TypeScriptToolsVersion>
+    <IsPackable>false</IsPackable>
+    <SpaRoot>ClientApp\</SpaRoot>
+    <DefaultItemExcludes>$(DefaultItemExcludes);$(SpaRoot)node_modules\**</DefaultItemExcludes>
+
+    <!-- Set this to true if you enable server-side prerendering -->
+    <BuildServerSideRenderer>false</BuildServerSideRenderer>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <PackageReference Include="Microsoft.AspNetCore.App" />
+    <PackageReference Include="Microsoft.AspNetCore.Razor.Design" Version="2.2.0" PrivateAssets="All" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <!-- Don't publish the SPA source files, but do show them in the project files list -->
+    <Content Remove="$(SpaRoot)**" />
+    <None Remove="$(SpaRoot)**" />
+    <None Include="$(SpaRoot)**" Exclude="$(SpaRoot)node_modules\**" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <None Remove="ClientApp\src\enums\enums.ts" />
+    <None Remove="ClientApp\src\models\Certification.ts" />
+    <None Remove="ClientApp\src\models\Client.ts" />
+    <None Remove="ClientApp\src\models\Configuration.ts" />
+    <None Remove="ClientApp\src\models\DbInfo.ts" />
+    <None Remove="ClientApp\src\models\EnumList.ts" />
+    <None Remove="ClientApp\src\models\EnumValue.ts" />
+    <None Remove="ClientApp\src\models\FieldInspection.ts" />
+    <None Remove="ClientApp\src\models\Permission.ts" />
+    <None Remove="ClientApp\src\models\Purchase.ts" />
+    <None Remove="ClientApp\src\models\Question.ts" />
+    <None Remove="ClientApp\src\models\Questionaire.ts" />
+    <None Remove="ClientApp\src\models\Section.ts" />
+    <None Remove="ClientApp\src\models\Settings.ts" />
+    <None Remove="ClientApp\src\models\SubSection.ts" />
+    <None Remove="ClientApp\src\models\Topic.ts" />
+    <None Remove="ClientApp\src\models\Trainer.ts" />
+    <None Remove="ClientApp\src\models\Training.ts" />
+    <None Remove="ClientApp\src\models\User.ts" />
+    <None Remove="ClientApp\src\models\UserRight.ts" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Content Include="ClientApp\src\assets\favicon.ico" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <Folder Include="wwwroot\" />
+  </ItemGroup>
+
+  <ItemGroup>
+    <TypeScriptCompile Include="ClientApp\src\enums\enums.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Certification.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Client.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Configuration.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\DbInfo.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\EnumList.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\EnumValue.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\FieldInspection.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Permission.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Purchase.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Question.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Questionaire.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Section.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Settings.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\SubSection.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Topic.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Trainer.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\Training.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\User.ts" />
+    <TypeScriptCompile Include="ClientApp\src\models\UserRight.ts" />
+  </ItemGroup>
+
+  <Target Name="DebugEnsureNodeEnv" BeforeTargets="Build" Condition=" '$(Configuration)' == 'Debug' And !Exists('$(SpaRoot)node_modules') ">
+    <!-- Ensure Node.js is installed -->
+    <Exec Command="node --version" ContinueOnError="true">
+      <Output TaskParameter="ExitCode" PropertyName="ErrorCode" />
+    </Exec>
+    <Error Condition="'$(ErrorCode)' != '0'" Text="Node.js is required to build and run this project. To continue, please install Node.js from https://nodejs.org/, and then restart your command prompt or IDE." />
+    <Message Importance="high" Text="Restoring dependencies using 'npm'. This may take several minutes..." />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+  </Target>
+
+  <Target Name="PublishRunWebpack" AfterTargets="ComputeFilesToPublish">
+    <!-- As part of publishing, ensure the JS resources are freshly built in production mode -->
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm install" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build -- --prod" />
+    <Exec WorkingDirectory="$(SpaRoot)" Command="npm run build:ssr -- --prod" Condition=" '$(BuildServerSideRenderer)' == 'true' " />
+
+    <!-- Include the newly-built files in the publish output -->
+    <ItemGroup>
+      <DistFiles Include="$(SpaRoot)dist\**; $(SpaRoot)dist-server\**" />
+      <DistFiles Include="$(SpaRoot)node_modules\**" Condition="'$(BuildServerSideRenderer)' == 'true'" />
+      <ResolvedFileToPublish Include="@(DistFiles->'%(FullPath)')" Exclude="@(ResolvedFileToPublish)">
+        <RelativePath>%(DistFiles.Identity)</RelativePath>
+        <CopyToPublishDirectory>PreserveNewest</CopyToPublishDirectory>
+      </ResolvedFileToPublish>
+    </ItemGroup>
+  </Target>
+
+</Project>

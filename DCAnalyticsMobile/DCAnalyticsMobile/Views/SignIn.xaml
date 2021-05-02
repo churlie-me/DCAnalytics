@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             xmlns:local="clr-namespace:DCAnalyticsMobile.Controls"
+             BackgroundColor="#1976d3"
+             x:Class="DCAnalyticsMobile.Views.SignIn"
+             xmlns:trigger="clr-namespace:DCAnalyticsMobile.Triggers"
+             NavigationPage.HasNavigationBar="false">
+    <ContentPage.Content>
+        <StackLayout Padding="60,0,60,0">
+            <StackLayout x:Name="signStack" Orientation="Vertical" 
+                         VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                <StackLayout Orientation="Vertical" HorizontalOptions="Center" Padding="5,0,5,10" Margin="0,0,0,30">
+                    <Image Source="ic_logo.png" HorizontalOptions="CenterAndExpand" WidthRequest="75" HeightRequest="75" />
+                    <Label Text="DCAnalytics" VerticalTextAlignment="Start" HorizontalOptions="CenterAndExpand" FontSize="35" FontAttributes="Bold"
+                           TextColor="#FFFFFF" />
+                </StackLayout>
+                <Frame CornerRadius="14" Margin="15,0,15,15" BorderColor="Red" IsVisible="False" BackgroundColor="Red" Padding="10,5,10,5" x:Name="loginError">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image Source="ic_exclamation.png" HeightRequest="14" WidthRequest="14"/>
+                        <Label Text="Incorrect login details. Try again" FontSize="15" FontAttributes="Italic" TextColor="#FFFFFF" />
+                    </StackLayout>
+                </Frame>
+                <Frame CornerRadius="8" Margin="0,0,0,10" BorderColor="White" Padding="1" HasShadow="False" BackgroundColor="White">
+                    <local:AIEntry
+                            CornerRadius="8" BorderColor="White"
+                            HorizontalTextAlignment="Center" IsCurvedCornersEnabled="True"  x:Name="Username"
+                            BackgroundColor="Transparent" FontSize="17" HeightRequest="50" Placeholder="Username" 
+                            PlaceholderColor="LightSlateGray"
+                            TextColor="Black" WidthRequest="254"/>
+                </Frame>
+                <Frame CornerRadius="8" Margin="0,0,0,10" BorderColor="White" BackgroundColor="White" Padding="1" HasShadow="False">
+                    <Grid>
+                        <local:AIEntry
+                            CornerRadius="8" BorderColor="White"
+                            HorizontalTextAlignment="Center"
+                            x:Name="Password" IsCurvedCornersEnabled="True" BackgroundColor="Transparent" IsPassword="{Binding Source={x:Reference ShowPasswordActualTrigger}, Path=HidePassword}"
+                            FontSize="17" HeightRequest="50" Placeholder="Password"
+                            PlaceholderColor="LightSlateGray" TextColor="Black" WidthRequest="254"/>
+                        <ImageButton VerticalOptions="Center"
+                             Margin="0,0,10,0"
+                             HeightRequest="20"
+                             WidthRequest="20"
+                             x:Name="_showhidePassword"
+                             HorizontalOptions="End"
+                             Source="ic_eye_hide">
+                            <ImageButton.Triggers>
+                                <EventTrigger Event="Clicked">
+                                    <trigger:PasswordTrigger ShowIcon="ic_eye"
+                                                              HideIcon="ic_eye_hide"
+                                                              x:Name="ShowPasswordActualTrigger"/>
+                                </EventTrigger>
+                            </ImageButton.Triggers>
+                        </ImageButton>
+                    </Grid>
+                </Frame>
+                <Frame CornerRadius="8" Padding="0" BackgroundColor="#FFFFFF" HasShadow="false" HeightRequest="50" WidthRequest="254" x:Name="signInBtn">
+                    <StackLayout HorizontalOptions="CenterAndExpand" Padding="15,10,15,10" Orientation="Horizontal"  HeightRequest="50">
+                        <ActivityIndicator x:Name="processInIndicator" IsRunning="false" Color="#000000"
+                                   IsVisible="false" WidthRequest="20" HeightRequest="20"/>
+                        <Label Text="SIGN IN" x:Name="signInLbl" TextColor="#000000"  FontSize="15" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AuthorizeUser"/>
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Label HorizontalOptions="Center" HorizontalTextAlignment="Center" TextColor="#fff" FontSize="16" Margin="0,20,0,0" Text="By signing in an account, you agree to our" />
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Terms of Service"
+                                  TextColor="#fff"
+                                  TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://DCAnalyticsapp.com/termsofservice" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text="." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                    <Label Text="and" TextColor="#fff"/>
+                    <Label>
+                        <Label.FormattedText>
+                            <FormattedString>
+                                <Span Text="Privacy policy"
+                                  TextColor="#fff"
+                                  TextDecorations="Underline">
+                                    <Span.GestureRecognizers>
+                                        <TapGestureRecognizer Command="{Binding TapCommand}"
+                                          CommandParameter="https://DCAnalyticsapp.com/termsofservice" />
+                                    </Span.GestureRecognizers>
+                                </Span>
+                                <Span Text="." />
+                            </FormattedString>
+                        </Label.FormattedText>
+                    </Label>
+                </StackLayout>
+                <Label Text="Forgot password?"  HorizontalOptions="Center" 
+                       Margin="0,10,0,0" FontSize="17" TextColor="#FFFFFF">
+                    <Label.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="ForgotPassword"/>
+                    </Label.GestureRecognizers>
+                </Label>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

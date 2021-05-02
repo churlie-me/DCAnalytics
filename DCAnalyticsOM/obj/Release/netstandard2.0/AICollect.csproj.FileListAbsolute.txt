@@ -1,0 +1,17 @@
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.deps.json
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.dll
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.pdb
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.csproj.CoreCompileInputs.cache
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.AssemblyInfoInputs.cache
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.AssemblyInfo.cs
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.dll
+C:\Users\CHURLIE\Source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.pdb
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.deps.json
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.dll
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\bin\Release\netstandard2.0\DCAnalytics.pdb
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.csprojAssemblyReference.cache
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.AssemblyInfoInputs.cache
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.AssemblyInfo.cs
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.csproj.CoreCompileInputs.cache
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.dll
+C:\Users\CJ\source\Repos\DCAnalytics2019\DCAnalyticsOM\obj\Release\netstandard2.0\DCAnalytics.pdb

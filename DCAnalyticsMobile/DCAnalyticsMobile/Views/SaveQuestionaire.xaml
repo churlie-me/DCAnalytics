@@ -1,0 +1,42 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.SaveQuestionaire"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="#1976d3">
+    <ContentPage.Content>
+        <StackLayout Orientation="Vertical" VerticalOptions="Center" HorizontalOptions="CenterAndExpand" Padding="20,0,20,0">
+            <Image x:Name="reportIcon" IsVisible="True" Source="ic_questionaire.png"
+                   HeightRequest="128" WidthRequest="128" Margin="0,0,0,10" HorizontalOptions="CenterAndExpand" />
+            <Label Text="Submit Questionaire" HorizontalOptions="CenterAndExpand" x:Name="reportStatus" IsVisible="True"
+                   FontSize="30" TextColor="White" FontAttributes="Bold" Margin="0,0,0,5" XAlign="Center"/>
+            <!--<Frame x:Name="submit"
+                   Padding="0" BackgroundColor="#33d876" CornerRadius="8" HasShadow="False" IsVisible="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="SUBMIT" TextColor="White" Margin="10,0,0,0"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSubmit"/>
+                </Frame.GestureRecognizers>
+            </Frame>-->
+            <Frame x:Name="return"
+                   Padding="0" BackgroundColor="Wheat" CornerRadius="8" HasShadow="False" IsVisible="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="RETURN TO QUESTIONAIRE" TextColor="White" Margin="10,0,0,0" x:Name="returnLbl"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnReturn"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+            <Frame x:Name="exit"
+                   Padding="0" BackgroundColor="Red" CornerRadius="8" HasShadow="False" IsVisible="True">
+                <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand" Padding="10">
+                    <Label Text="EXIT" TextColor="LightSlateGray" Margin="10,0,0,0"/>
+                </StackLayout>
+                <Frame.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnExit"/>
+                </Frame.GestureRecognizers>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

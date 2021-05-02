@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.NavigationDrawer"
+             BackgroundColor="White"
+             Title="Menu">
+    <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand">
+        <StackLayout HeightRequest="230" BackgroundColor="#1976d3">
+            <StackLayout Orientation="Vertical" VerticalOptions="CenterAndExpand" Margin="10,15,0,0">
+                <Frame HasShadow="False" Padding="0"  BackgroundColor="#00314A" IsClippedToBounds="True" HorizontalOptions="Center">
+                    <StackLayout HeightRequest="80" WidthRequest="80">
+                        <Image Source="avatar.png" HeightRequest="80" WidthRequest="80" x:Name="avatar" Aspect="Fill"/>
+                    </StackLayout>
+                    <Frame.CornerRadius>
+                        <OnPlatform x:TypeArguments="x:Single" iOS="50" Android="100"/>
+                    </Frame.CornerRadius>
+                </Frame>
+                <StackLayout Orientation="Vertical" HorizontalOptions="CenterAndExpand" VerticalOptions="Center">
+                    <Label Text="John Doe" x:Name="username" TextColor="White" FontSize="20" Margin="15,0,0,0" 
+                           HorizontalTextAlignment="Center" HorizontalOptions="CenterAndExpand"/>
+                    <Label Text="Admin, Andela (U) LTD" x:Name="_client" TextColor="LightBlue" FontSize="17" Margin="15,0,0,15" HorizontalTextAlignment="Center"
+                           HorizontalOptions="CenterAndExpand"/>
+                </StackLayout>
+            </StackLayout>
+        </StackLayout>
+        <BoxView Color="#88D5F8" HorizontalOptions="Fill" HeightRequest="4" Margin="0,-7,0,0"/>
+        <StackLayout HorizontalOptions="StartAndExpand" Padding="20,10,36,24">
+            <!--MenuItem => Configurations-->
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_user.png" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" Margin="0,0,20,0" />
+                <Label HorizontalTextAlignment="Start" Text="Profile"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnProfileTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <!--MenuItem => Synchronize-->
+            <BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_synchronize.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label HorizontalTextAlignment="Start" Text="Synchronize"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSynchronizationTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <!--MenuItem => Recent Activity-->
+            <!--<BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_RecentActivity.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label HorizontalTextAlignment="Start" Text="Recent Activity"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnCredentialsTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>-->
+
+            <!--MenuItem => Settings-->
+            <BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_navsettings.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label HorizontalTextAlignment="Start" Text="Settings"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+
+            <!--MenuItem => Notifications-->
+            <!--<BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_notification.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label HorizontalTextAlignment="Start" Text="Notifications"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnConfigurationsTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>-->
+            
+            <!--MenuItem => Help & Support-->
+            <BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_help.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label HorizontalTextAlignment="Start" Text="Help &amp; Support"
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnHelpCenter_Tapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            
+            <!--MenuItem => Signout-->
+            <BoxView BackgroundColor="#FFDCDCDC" HeightRequest="0.5" WidthRequest="200"  HorizontalOptions="FillAndExpand"/>
+            <StackLayout HorizontalOptions="FillAndExpand" Orientation="Horizontal" Padding="2">
+                <Image Source="ic_logout.png" Margin="0,0,20,0" WidthRequest="30" HeightRequest="30" VerticalOptions="Center" />
+                <Label Text="Log Out" x:Name="logout" HorizontalTextAlignment="Start" 
+                       VerticalOptions="Center" TextColor="#2699fb" FontSize="18" />
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="OnSignOutTapped" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+            <BoxView BackgroundColor="#FFDCDCDC" WidthRequest="200" HeightRequest="0.5"  HorizontalOptions="FillAndExpand"/>
+        </StackLayout>
+        <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="EndAndExpand" Padding="0,36,36,36">
+            <Label  Text="V 1.0.0.0" FontSize="13" FontAttributes="None" TextColor="#FFACACAC" />
+        </StackLayout>
+        <BoxView Color="#88D5F8" HorizontalOptions="Fill" HeightRequest="10" VerticalOptions="EndAndExpand"/>
+    </StackLayout>
+</ContentPage>

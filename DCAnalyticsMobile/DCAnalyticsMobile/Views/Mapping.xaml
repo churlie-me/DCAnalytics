@@ -1,0 +1,105 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.Mapping"
+             Title="Mapping"
+             xmlns:map="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.Mapbox.Forms">
+    <ContentPage.Content>
+        <StackLayout HorizontalOptions="Fill" VerticalOptions="Fill" Orientation="Vertical">
+            <Grid Margin="0,0,0,10" Padding="10">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout Orientation="Vertical" Grid.Column="0">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Accuracy :" />
+                        <Label x:Name="accuracy" Text="............" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Latitude :" />
+                        <Label x:Name="latitude" Text="............" />
+                    </StackLayout>
+                </StackLayout>
+                <StackLayout Orientation="Vertical" Grid.Column="1">
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Area :" />
+                        <Label x:Name="area" Text="............" />
+                    </StackLayout>
+                    <StackLayout Orientation="Horizontal">
+                        <Label Text="Longitude :" />
+                        <Label x:Name="longitude" Text="............" />
+                    </StackLayout>
+                </StackLayout>
+            </Grid>
+            <AbsoluteLayout VerticalOptions="FillAndExpand">
+                <map:MapView x:Name="map" 
+                         VerticalOptions="FillAndExpand"
+                         AbsoluteLayout.LayoutBounds="0,0,1,1"
+                         AbsoluteLayout.LayoutFlags="All" />
+                <!--Refresh-->
+                <Frame x:Name="undo" BackgroundColor="#fb0b0c"
+                    HeightRequest="40"
+                    HasShadow="false" WidthRequest="40"
+                    HorizontalOptions="Center" VerticalOptions="Center" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"  
+                    AbsoluteLayout.LayoutBounds=".98,.35,80,80" Padding="10">
+                    <Image Source="ic_undo.png" HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Undo" />
+                    </Frame.GestureRecognizers>
+                    <Frame.CornerRadius>
+                        <OnPlatform x:TypeArguments="x:Single" iOS="30" Android="40" />
+                    </Frame.CornerRadius>
+                </Frame>
+
+                <!--Your Location-->
+                <Frame BackgroundColor="#ffffff"
+                    HeightRequest="40"
+                    HasShadow="false" WidthRequest="40"
+                    HorizontalOptions="Center" VerticalOptions="Center" 
+                    AbsoluteLayout.LayoutFlags="PositionProportional"  
+                    AbsoluteLayout.LayoutBounds=".953,.50,60,60" Padding="5">
+                    <Image Source="ic_locate_me.png" HorizontalOptions="CenterAndExpand"
+                        VerticalOptions="CenterAndExpand"/>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="LocateMe" />
+                    </Frame.GestureRecognizers>
+                    <Frame.CornerRadius>
+                        <OnPlatform x:TypeArguments="x:Single" iOS="30" Android="40" />
+                    </Frame.CornerRadius>
+                </Frame>
+
+                <!--Preview-->
+                <Frame x:Name="preview" BackgroundColor="#1976d3"
+                        HeightRequest="40"
+                        HasShadow="false" WidthRequest="40"
+                        HorizontalOptions="Center" VerticalOptions="Center"
+                        AbsoluteLayout.LayoutFlags="PositionProportional"  
+                        AbsoluteLayout.LayoutBounds=".98,.65,80,80" Padding="10">
+                        <StackLayout HorizontalOptions="Center" VerticalOptions="Center">
+                            <Image Source="ic_done_white.png" HeightRequest="24"
+                            WidthRequest="24" HorizontalOptions="Center"
+                            VerticalOptions="Center"/>
+                        </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Preview" />
+                    </Frame.GestureRecognizers>
+                    <Frame.CornerRadius>
+                        <OnPlatform x:TypeArguments="x:Single" iOS="30" Android="40" />
+                    </Frame.CornerRadius>
+                </Frame>
+            </AbsoluteLayout>
+            <StackLayout Orientation="Vertical" Padding="5">
+                <Image Source="ic_add_marker.png" HeightRequest="24"
+                       WidthRequest="24" HorizontalOptions="Center"
+                       VerticalOptions="Center" />
+                <Label Text="Add Marker" HorizontalOptions="Center"/>
+                <StackLayout.GestureRecognizers>
+                    <TapGestureRecognizer Tapped="AddMapMarker" />
+                </StackLayout.GestureRecognizers>
+            </StackLayout>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

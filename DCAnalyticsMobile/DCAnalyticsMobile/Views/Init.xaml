@@ -1,0 +1,37 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             BackgroundColor="#1976d3"
+             NavigationPage.HasNavigationBar="False"
+             xmlns:custom="clr-namespace:DCAnalyticsMobile.Controls"
+             x:Class="DCAnalyticsMobile.Views.Init">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand">
+                    <Label Text="DCAnalytics" VerticalTextAlignment="Start" FontSize="50" FontAttributes="Bold" TextColor="#FFFFFF" HorizontalOptions="Center" HorizontalTextAlignment="Center" />
+                    <Label HorizontalOptions="Center" TextColor="#ffffff" Text="Welcome to DCAnalytics, please attach or sync your configuration to proceed" HorizontalTextAlignment="Center" Margin="15,0,15,0"/>
+                </StackLayout>
+            </StackLayout>
+            <!--<Grid Margin="10,0,10,10" VerticalOptions="End"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <custom:LeftWhiteButton Text="Sync" FontSize="14" BackgroundColor="White" Clicked="Sync" TextColor="#000000" Grid.Column="0"/>
+                <custom:RightWhiteButton Text="Attach" FontSize="14" BackgroundColor="White" Clicked="Attach" TextColor="#000000" Grid.Column="1"/>
+            </Grid>-->
+            <Button
+                  Margin="10,0,10,10" VerticalOptions="End" CornerRadius="10"
+                  Text="Sync" FontSize="14" BackgroundColor="White" Clicked="Sync" TextColor="#000000"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}" />
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

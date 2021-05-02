@@ -1,0 +1,76 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.ConfigDashboard"
+             Title="Dashboard">
+    <ContentPage.Content>
+        <StackLayout Padding="15" VerticalOptions="CenterAndExpand">
+            <Label Text="Welcome, select an option to proceed"
+                VerticalOptions="Start" Margin="0,0,0,10" FontSize="Default" HorizontalTextAlignment="Center"
+                HorizontalOptions="CenterAndExpand" />
+            <Grid Margin="10,30,10,0">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                
+                <Frame Padding="15" Grid.Column="0" Grid.Row="0">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_survey.png" Margin="0,0,0,10"/>
+                        <Label Text="Register" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSurveyTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Padding="15" Grid.Column="1" Grid.Row="0">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_field_inspection.png" Margin="0,0,0,10" />
+                        <Label Text="Inspection" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnInspectionTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Padding="15" Grid.Column="0" Grid.Row="1">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_certification.png" Margin="0,0,0,10" />
+                        <Label Text="Certification" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnCertificationTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Padding="15" Grid.Column="1" Grid.Row="1">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_purchase.png" Margin="0,0,0,10" />
+                        <Label Text="Purchases" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnPurchasesTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+
+                <Frame Padding="15" Grid.Column="0" Grid.Row="2">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_trainings.png" Margin="0,0,0,10" />
+                        <Label Text="Trainings" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnTrainingsTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+                <Frame Padding="15" Grid.Column="1" Grid.Row="2">
+                    <StackLayout Orientation="Vertical">
+                        <Image Source="ic_settings.png" Margin="0,0,0,10" />
+                        <Label Text="Settings" HorizontalTextAlignment="Center" />
+                    </StackLayout>
+                    <Frame.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="OnSettingsTapped" />
+                    </Frame.GestureRecognizers>
+                </Frame>
+            </Grid>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

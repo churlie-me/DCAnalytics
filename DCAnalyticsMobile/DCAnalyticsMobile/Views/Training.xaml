@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.Training"
+             BackgroundColor="#fcfcfc"
+             Title="Training">
+    <ContentPage.Content>
+        <RelativeLayout>
+            <RelativeLayout VerticalOptions="FillAndExpand"
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                <StackLayout x:Name="trainerStack" Margin="0,0,0,15" BackgroundColor="#ffffff" VerticalOptions="Fill"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.53}">
+                    <Frame Padding="0" Margin="15,15,15,0" VerticalOptions="FillAndExpand">
+                        <StackLayout Orientation="Vertical" VerticalOptions="Fill">
+                            <StackLayout Padding="10" BackgroundColor="#88D5F8">
+                                <Label Text="Trainers" TextColor="#1976d3"/>
+                            </StackLayout>
+                            <RelativeLayout Margin="15" VerticalOptions="Fill">
+                                <ListView x:Name="trainers" SelectionMode="None" HasUnevenRows="True"
+                                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.63}">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
+                                                    <Label Text="{Binding Name}" />
+                                                    <Image Source="ic_forward.png" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Margin="10,0,0,0"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                                <StackLayout RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.35}"
+                                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.63}">
+                                    <Button Text="+ Add a Trainer" Padding="30,0,30,0" HorizontalOptions="EndAndExpand" Clicked="AddTrainer" FontSize="12" HeightRequest="32"
+                                           BackgroundColor="Transparent" BorderWidth="1" BorderColor="#1976d3" TextColor="#1976d3" />
+                                </StackLayout>
+                            </RelativeLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+                <StackLayout x:Name="topictack" Margin="0,0,0,15" BackgroundColor="#ffffff"
+                             RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                             RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.5}"
+                             RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.55}">
+                    <Frame Padding="0" Margin="15,15,15,5">
+                        <StackLayout Orientation="Vertical">
+                            <StackLayout Padding="10" BackgroundColor="#88D5F8">
+                                <Label Text="Assigned Topics" TextColor="#1976d3"/>
+                            </StackLayout>
+                            <StackLayout Orientation="Vertical" Padding="15">
+                                <ListView x:Name="topics" SelectionMode="None" HasUnevenRows="True">
+                                    <ListView.ItemTemplate>
+                                        <DataTemplate>
+                                            <ViewCell>
+                                                <StackLayout Orientation="Horizontal" Margin="0,5,0,5">
+                                                    <Label Text="{Binding Name}" />
+                                                    <Image Source="ic_forward.png" HorizontalOptions="EndAndExpand" HeightRequest="20" WidthRequest="20" Margin="10,0,0,0"/>
+                                                </StackLayout>
+                                            </ViewCell>
+                                        </DataTemplate>
+                                    </ListView.ItemTemplate>
+                                </ListView>
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                </StackLayout>
+            </RelativeLayout>
+            <Grid VerticalOptions="End"
+                  RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                  RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.90}"
+                  RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.1}">
+                <Grid.ColumnDefinitions>
+                    <ColumnDefinition Width="5*" />
+                    <ColumnDefinition Width="5*" />
+                </Grid.ColumnDefinitions>
+                <StackLayout BackgroundColor="#1971B9" Grid.Column="0" HorizontalOptions="Fill" Padding="7">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image Source="ic_mapmarker.png"/>
+                        <Label Text="Venue" TextColor="#FFFFFF" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddLocation" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout BackgroundColor="#88d5f8" Grid.Column="1" HorizontalOptions="Fill" Padding="7">
+                    <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                        <Image Source="ic_reading.png"/>
+                        <Label Text="Trainees" TextColor="#FFFFFF" VerticalOptions="CenterAndExpand"/>
+                    </StackLayout>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="AddTrainees" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </Grid>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

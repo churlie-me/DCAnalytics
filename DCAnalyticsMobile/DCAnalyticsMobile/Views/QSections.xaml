@@ -1,0 +1,60 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="DCAnalyticsMobile.Views.QSections">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Remove"
+                 IconImageSource="ic_remove.png"
+                 Clicked="OnRemove"
+                 x:Name="remove"
+                 Order="Secondary"
+                 Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RelativeLayout VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                <StackLayout 
+                    HorizontalOptions="Fill" Orientation="Vertical"
+                    Padding="10,10,20,10" BackgroundColor="LightGray">
+                    <Label Text="Section Title" FontSize="18" x:Name="sectionTitle" Margin="15,0,15,0" HorizontalOptions="Fill"/>
+                </StackLayout>
+                <ScrollView VerticalScrollBarVisibility="Never" VerticalOptions="Fill">
+                    <StackLayout x:Name="questionaireStack" VerticalOptions="Fill">
+                        <StackLayout VerticalOptions="CenterAndExpand" HorizontalOptions="CenterAndExpand" x:Name="progressIndicator">
+                            <ActivityIndicator IsRunning="True" IsVisible="True"/>
+                            <Label HorizontalOptions="Center" Text="Please wait, we're preparing your questionaire" HorizontalTextAlignment="Center" Margin="15,0,15,0"/>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout 
+                    HorizontalOptions="Fill" Orientation="Horizontal"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.92}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.08}" 
+                    Padding="10,10,20,10" BackgroundColor="#1976d3">
+                <StackLayout HorizontalOptions="Start" VerticalOptions="Center" 
+                             IsVisible="False" x:Name="previous">
+                    <Image Source="ic_previous.png" HeightRequest="24"
+                        WidthRequest="24" HorizontalOptions="Center"
+                        VerticalOptions="Center"/>
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Previous" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+                <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" x:Name="next">
+                    <Image Source="ic_next.png" HeightRequest="24"
+                        WidthRequest="24" HorizontalOptions="Center" x:Name="nextIcon"
+                        VerticalOptions="Center"/>
+                    <ActivityIndicator IsRunning="False" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" Color="White"
+                                       HeightRequest="24" WidthRequest="24" x:Name="processIndicatior" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Next" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

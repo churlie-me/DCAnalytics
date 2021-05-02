@@ -1,0 +1,29 @@
+{
+  "version": 2,
+  "dgSpecHash": "Vj2Hz+79YEwy4F6XJjN8o9tjw/f69kXAdxJ9RG55Kgd2f+g5937poMYzBIE45QiGlac7rwC/QmOH2flTs2AwyA==",
+  "success": true,
+  "projectFilePath": "C:\\Users\\CJ\\source\\Workspaces\\DCAnalytics\\DCAnalyticsMobile\\DCAnalyticsMobile\\DCAnalyticsMobile.csproj",
+  "expectedPackageFiles": [
+    "C:\\Users\\CJ\\.nuget\\packages\\geojson.net\\1.1.73\\geojson.net.1.1.73.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\microsoft.netcore.platforms\\1.1.0\\microsoft.netcore.platforms.1.1.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\naxam.mapbox.forms\\1.0.8.3\\naxam.mapbox.forms.1.0.8.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\netstandard.library\\2.0.3\\netstandard.library.2.0.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\newtonsoft.json\\12.0.3\\newtonsoft.json.12.0.3.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\plugin.fingerprint\\1.4.9\\plugin.fingerprint.1.4.9.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\plugin.permissions\\3.0.0.12\\plugin.permissions.3.0.0.12.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\refractored.mvvmhelpers\\1.6.2\\refractored.mvvmhelpers.1.6.2.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\rg.plugins.popup\\2.0.0.10\\rg.plugins.popup.2.0.0.10.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlite-net-pcl\\1.6.292\\sqlite-net-pcl.1.6.292.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlitepclraw.bundle_green\\1.1.13\\sqlitepclraw.bundle_green.1.1.13.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\sqlitepclraw.core\\1.1.13\\sqlitepclraw.core.1.1.13.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\system.numerics.vectors\\4.5.0\\system.numerics.vectors.4.5.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\system.valuetuple\\4.5.0\\system.valuetuple.4.5.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xam.plugin.geolocator\\4.5.0.6\\xam.plugin.geolocator.4.5.0.6.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xam.plugin.media\\4.0.1.5\\xam.plugin.media.4.0.1.5.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.essentials\\1.2.0\\xamarin.essentials.1.2.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.forms\\4.8.0.1269\\xamarin.forms.4.8.0.1269.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.forms.inputkit\\3.1.0\\xamarin.forms.inputkit.3.1.0.nupkg.sha512",
+    "C:\\Users\\CJ\\.nuget\\packages\\xamarin.plugin.filepicker\\2.1.34\\xamarin.plugin.filepicker.2.1.34.nupkg.sha512"
+  ],
+  "logs": []
+}

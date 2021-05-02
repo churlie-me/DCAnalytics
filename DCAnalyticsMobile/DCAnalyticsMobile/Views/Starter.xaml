@@ -1,0 +1,101 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             Title="Questionaire Starter"
+             x:Class="DCAnalyticsMobile.Views.Starter">
+    <ContentPage.ToolbarItems>
+        <ToolbarItem Text="Remove"
+                 IconImageSource="ic_remove.png"
+                 Clicked="OnRemove"
+                 x:Name="remove"
+                 Order="Secondary"
+                 Priority="1" />
+    </ContentPage.ToolbarItems>
+    <ContentPage.Content>
+        <RelativeLayout VerticalOptions="FillAndExpand">
+            <StackLayout Orientation="Vertical" VerticalOptions="FillAndExpand" 
+                         RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                         RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.9}">
+                <StackLayout 
+                    HorizontalOptions="Fill" Orientation="Vertical"
+                    Padding="10,10,20,10" BackgroundColor="LightGray">
+                    <Label Text="Select Options" FontSize="18" x:Name="sectionTitle" Margin="15,0,15,0" HorizontalOptions="Fill"/>
+                </StackLayout>
+                <ScrollView VerticalScrollBarVisibility="Never" VerticalOptions="Fill">
+                    <StackLayout Orientation="Vertical" Padding="10,10,10,10">
+                        <!--Category-->
+                        <StackLayout Orientation="Vertical" x:Name="_category" IsVisible="false">
+                            <Label x:Name="category" FontSize="17" Margin="0, 0, 0, 5" HorizontalOptions="FillAndExpand">Category</Label>
+                            <Frame
+                                HasShadow="false"
+                                HorizontalOptions="FillAndExpand"
+                                CornerRadius="8"
+                                Padding="2"
+                                BorderColor="LightSlateGray">
+                                <StackLayout HeightRequest="38"
+                                         Orientation="Horizontal"
+                                         Padding="10,0,10,0"
+                                         VerticalOptions="CenterAndExpand">
+                                    <Label Text="Select Region" FontSize="16" x:Name="categorySelected"
+                                       VerticalOptions ="CenterAndExpand"></Label>
+                                    <Image VerticalOptions ="CenterAndExpand"
+                                        Source="ic_dropdown"
+                                        HeightRequest="16"
+                                        WidthRequest="16"
+                                        HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSelectCategory" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+
+                        <!--Region-->
+                        <StackLayout Orientation="Vertical" x:Name="_region" IsVisible="false">
+                            <Label x:Name="region" FontSize="17" Margin="0, 0, 0, 5" HorizontalOptions="FillAndExpand">Region</Label>
+                            <Frame
+                                HasShadow ="false"
+                                CornerRadius ="8"
+                                HorizontalOptions="FillAndExpand"
+                                Padding = "2"
+                                BorderColor ="LightSlateGray">
+                                <StackLayout HeightRequest = "38"
+                                         Orientation = "Horizontal"
+                                         Padding ="10,0,10,0"
+                                         VerticalOptions ="Fill">
+                                    <Label Text ="Select Region" FontSize ="16" x:Name="regionSelected"
+                                       VerticalOptions ="CenterAndExpand"></Label>
+                                    <Image VerticalOptions ="CenterAndExpand"
+                                        Source="ic_dropdown"
+                                        HeightRequest="16"
+                                        WidthRequest="16"
+                                        HorizontalOptions="EndAndExpand"/>
+                                </StackLayout>
+                                <Frame.GestureRecognizers>
+                                    <TapGestureRecognizer Tapped="OnSelectRegion" />
+                                </Frame.GestureRecognizers>
+                            </Frame>
+                        </StackLayout>
+                    </StackLayout>
+                </ScrollView>
+            </StackLayout>
+            <StackLayout 
+                    HorizontalOptions="Fill" Orientation="Horizontal"
+                    RelativeLayout.WidthConstraint="{ConstraintExpression Type=RelativeToParent, Property=Width, Factor=1}"
+                    RelativeLayout.YConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.92}"
+                    RelativeLayout.HeightConstraint="{ConstraintExpression Type=RelativeToParent, Property=Height, Factor=0.08}" 
+                    Padding="10,10,20,10" BackgroundColor="#1976d3">
+                <StackLayout HorizontalOptions="EndAndExpand" VerticalOptions="Center" x:Name="next">
+                    <Image Source="ic_next.png" HeightRequest="24"
+                        WidthRequest="24" HorizontalOptions="Center" x:Name="nextIcon"
+                        VerticalOptions="Center"/>
+                    <ActivityIndicator IsRunning="False" IsVisible="False" HorizontalOptions="Center" VerticalOptions="Center" Color="White"
+                                       HeightRequest="24" WidthRequest="24" x:Name="processIndicatior" />
+                    <StackLayout.GestureRecognizers>
+                        <TapGestureRecognizer Tapped="Next" />
+                    </StackLayout.GestureRecognizers>
+                </StackLayout>
+            </StackLayout>
+        </RelativeLayout>
+    </ContentPage.Content>
+</ContentPage>

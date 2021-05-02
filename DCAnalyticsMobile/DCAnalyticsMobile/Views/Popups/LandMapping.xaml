@@ -1,0 +1,40 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<pages:PopupPage 
+    xmlns="http://xamarin.com/schemas/2014/forms"
+    xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+    xmlns:d="http://xamarin.com/schemas/2014/forms/design"
+    xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+    xmlns:pages="clr-namespace:Rg.Plugins.Popup.Pages;assembly=Rg.Plugins.Popup"
+    xmlns:animations="clr-namespace:Rg.Plugins.Popup.Animations;assembly=Rg.Plugins.Popup"
+    xmlns:map="clr-namespace:Naxam.Controls.Forms;assembly=Naxam.Mapbox.Forms"
+    mc:Ignorable="d"
+    xmlns:custom="clr-namespace:DCAnalyticsMobile.Controls"
+    x:Class="DCAnalyticsMobile.Views.Popups.LandMapping">
+    <!--  Setting animations  -->
+    <pages:PopupPage.Animation>
+        <animations:ScaleAnimation 
+            DurationIn="400" DurationOut="300"
+            EasingIn="SinOut" EasingOut="SinIn"
+            HasBackgroundAnimation="True" PositionIn="Center"
+            PositionOut="Center" ScaleIn="1.2" ScaleOut="0.8" />
+    </pages:PopupPage.Animation>
+    <StackLayout Orientation="Vertical"
+        BackgroundColor="White" Padding="10" VerticalOptions="EndAndExpand"
+        HorizontalOptions="FillAndExpand">
+        <Label Text="Mapping" Margin="0,0,0,10" FontSize="Medium" FontAttributes="Bold" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        <Label Text="You need atleast 3 different coordinates to enclose your mapped land" Margin="0,0,0,10" FontSize="Default" TextColor="Red" HorizontalOptions="CenterAndExpand" HorizontalTextAlignment="Center"/>
+        <StackLayout x:Name="mContainer">
+            <map:MapView x:Name="map" 
+                         HorizontalOptions="Fill" HeightRequest="300" />
+        </StackLayout>
+        <Button CornerRadius="8" HorizontalOptions="Fill" Margin="0,4,0,4" Text="Grab Coordinates" Clicked="OnMap" BackgroundColor="Transparent" BorderWidth="1" BorderColor="#1976d3" TextColor="#1976d3" />
+        <Grid Margin="0,0,0,10">
+            <Grid.ColumnDefinitions>
+                <ColumnDefinition Width="5*" />
+                <ColumnDefinition Width="5*" />
+            </Grid.ColumnDefinitions>
+            <custom:LeftButton Text="Cancel" FontSize="14" Clicked="OnCancelled" TextColor="White" Grid.Column="0"/>
+            <custom:RightButton Text="Proceed" FontSize="14" Clicked="OnProceed" TextColor="White" Grid.Column="1"/>
+        </Grid>
+    </StackLayout>
+</pages:PopupPage>
