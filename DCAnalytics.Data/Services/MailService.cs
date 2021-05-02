@@ -16,7 +16,7 @@ namespace DCAnalytics.Data.Services
     public class MailService
     {
         private static string Email = "noreply@DCAnalyticsapp.com";
-        private static string SENDGRID_API_KEY = "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";
+        private static string SENDGRID_API_KEY = "xxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxxx";
 
         private static readonly HttpClient _client = new HttpClient();
 
